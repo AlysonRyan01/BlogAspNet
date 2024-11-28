@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "waZVcoQF8NcKjgDoZaI6mDcbM4+PGEMxn6WMkL52a8Q=",
+  "Hash": "6GvgA1YBGh03sejE5wGbhte7buFp5VID8gaDpNm1SZE=",
   "Source": "BlogAspNet",
   "BasePath": "_content/BlogAspNet",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

@@ -184,3 +184,6 @@
 /Users/alysonryanullirsch/Documents/ProjetosCsharp/BlogAspNet/obj/Debug/net8.0/BlogAspNet.pdb
 /Users/alysonryanullirsch/Documents/ProjetosCsharp/BlogAspNet/obj/Debug/net8.0/BlogAspNet.genruntimeconfig.cache
 /Users/alysonryanullirsch/Documents/ProjetosCsharp/BlogAspNet/obj/Debug/net8.0/ref/BlogAspNet.dll
+/Users/alysonryanullirsch/Documents/ProjetosCsharp/BlogAspNet/bin/Debug/net8.0/BlogAspNet.staticwebassets.endpoints.json
+/Users/alysonryanullirsch/Documents/ProjetosCsharp/BlogAspNet/obj/Debug/net8.0/staticwebassets.build.endpoints.json
+/Users/alysonryanullirsch/Documents/ProjetosCsharp/BlogAspNet/obj/Debug/net8.0/staticwebassets/msbuild.BlogAspNet.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
