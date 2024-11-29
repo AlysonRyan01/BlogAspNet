@@ -1,8 +1,7 @@
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using BlogAspNet.Data;
-using Microsoft.AspNetCore.Mvc;
 using BlogAspNet.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BlogAspNet.Controllers;
 
