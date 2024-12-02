@@ -1,4 +1,5 @@
 using BlogAspNet.Data;
+using BlogAspNet.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services
@@ -9,6 +10,7 @@ builder.Services
     });
 
 builder.Services.AddDbContext<BlogDataContext>();
+builder.Services.AddTransient<TokenService>(); //* Sempre criar um novo tokenService
 
 var app = builder.Build();
 app.MapControllers();
