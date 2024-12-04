@@ -1,31 +1,85 @@
+using BlogAspNet.Data;
+using BlogAspNet.Extensions;
+using BlogAspNet.Models;
 using BlogAspNet.Services;
+using BlogAspNet.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using SecureIdentity.Password;
 
 namespace BlogAspNet.Controllers;
 
 [ApiController]
 public class AccountController : ControllerBase
 {
-    [HttpGet("v1/login")]
-    public IActionResult Login([FromServices] TokenService tokenService)
+    [HttpPost("v1/accounts")]
+    public async Task<IActionResult> Post([FromBody] RegisterViewModel model,
+        [FromServices] BlogDataContext context)
     {
-        var token = tokenService.GenerateToken(null);
+        if (!ModelState.IsValid)
+            return BadRequest(new ResultViewModel<string>(ModelState.GetErrors()));
 
-        return Ok(token);
+        var user = new User
+        {
+            Name = model.Name,
+            Email = model.Email,
+            Slug = model.Email.Replace('@', '-').Replace('.', '-')
+        };
+
+        var password = PasswordGenerator.Generate(25);
+        user.PasswordHash = PasswordHasher.Hash(password);
+
+        try
+        {
+            await context.Users.AddAsync(user);
+            await context.SaveChangesAsync();
+
+            return Ok(new ResultViewModel<dynamic>(new
+            {
+                user = user.Email,
+                user.PasswordHash
+            }));
+        }
+        catch (DbUpdateException e)
+        {
+            return StatusCode(400 ,new ResultViewModel<string>("05x99 - Este E-mail já está cadastrado"));
+        }
+        catch
+        {
+            return StatusCode(500, new ResultViewModel<User>($"Erro. Falha interna no servidor"));
+        }
     }
     
-    [Authorize(Roles = "user, admin")]
-    [HttpGet("v1/User")]
-    public IActionResult GetUser() => Ok(User.Identity.Name);
-    
-    [Authorize(Roles = "author, admin")]
-    [HttpGet("v1/Author")]
-    public IActionResult GetAuthor() => Ok(User.Identity.Name);
-    
-    [Authorize(Roles = "admin")]
-    [HttpGet("v1/Admin")]
-    public IActionResult GetAdmin() => Ok(User.Identity.Name);
-    
+    [HttpGet("v1/login")]
+    public async Task<IActionResult> Login([FromServices] TokenService tokenService,
+        [FromBody] LoginViewModel model,
+        [FromServices] BlogDataContext context)
+    {
+        if(!ModelState.IsValid)
+            return BadRequest(new ResultViewModel<string>(ModelState.GetErrors()));
+        
+        var user = await context
+            .Users
+            .AsNoTracking()
+            .Include(x => x.Roles)
+            .FirstOrDefaultAsync(x => x.Email == model.Email);
+        
+        if(user == null)
+            return StatusCode(401, new ResultViewModel<string>($"Usuário ou senha inválidos"));
+        
+        if(!PasswordHasher.Verify(user.PasswordHash, model.Password))
+            return StatusCode(401, new ResultViewModel<string>($"Usuário ou senha inválidos"));
+
+        try
+        {
+            var token = tokenService.GenerateToken(user);
+            return Ok(new ResultViewModel<string>(token, null));
+        }
+        catch
+        {
+            return StatusCode(500, new ResultViewModel<User>($"0x230 - Falha interna no servidor"));
+        }
+    }
 }

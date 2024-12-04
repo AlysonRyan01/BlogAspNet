@@ -374,3 +374,4 @@ C:/Users/alyso/OneDrive/Documentos/CSharpProjects/BlogAspNet/obj/Debug/net8.0/re
 /Users/alysonryanullirsch/Documents/ProjetosCsharp/BlogAspNet/obj/Debug/net8.0/BlogAspNet.pdb
 /Users/alysonryanullirsch/Documents/ProjetosCsharp/BlogAspNet/obj/Debug/net8.0/BlogAspNet.genruntimeconfig.cache
 /Users/alysonryanullirsch/Documents/ProjetosCsharp/BlogAspNet/obj/Debug/net8.0/ref/BlogAspNet.dll
+/Users/alysonryanullirsch/Documents/ProjetosCsharp/BlogAspNet/bin/Debug/net8.0/SecureIdentity.dll
