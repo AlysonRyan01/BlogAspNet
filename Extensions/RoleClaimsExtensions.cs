@@ -11,7 +11,10 @@ public static class RoleClaimsExtensions
         {
             new Claim(ClaimTypes.Name, user.Email),
         };
-        result.AddRange(user.Roles.Select(role => new Claim(ClaimTypes.Role, role.Slug)));
+        foreach (var role in user.Roles)
+        {
+           result.Add(new Claim(ClaimTypes.Role, role.Slug));
+        }
         return result;
     }
 }

@@ -5808,20 +5808,20 @@
     ]
   },
   "packageFolders": {
-    "/Users/alysonryanullirsch/.nuget/packages/": {}
+    "C:\\Users\\alyso\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/alysonryanullirsch/Documents/ProjetosCsharp/BlogAspNet/BlogAspNet.csproj",
+      "projectUniqueName": "D:\\GitHubRepository\\BlogAspNet\\BlogAspNet.csproj",
       "projectName": "BlogAspNet",
-      "projectPath": "/Users/alysonryanullirsch/Documents/ProjetosCsharp/BlogAspNet/BlogAspNet.csproj",
-      "packagesPath": "/Users/alysonryanullirsch/.nuget/packages/",
-      "outputPath": "/Users/alysonryanullirsch/Documents/ProjetosCsharp/BlogAspNet/obj/",
+      "projectPath": "D:\\GitHubRepository\\BlogAspNet\\BlogAspNet.csproj",
+      "packagesPath": "C:\\Users\\alyso\\.nuget\\packages\\",
+      "outputPath": "D:\\GitHubRepository\\BlogAspNet\\obj\\",
       "projectStyle": "PackageReference",
       "UsingMicrosoftNETSdk": false,
       "configFilePaths": [
-        "/Users/alysonryanullirsch/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\alyso\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -5843,7 +5843,7 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -5898,11 +5898,15 @@
             "version": "[8.0.11, 8.0.11]"
           },
           {
-            "name": "Microsoft.NETCore.App.Host.osx-arm64",
+            "name": "Microsoft.NETCore.App.Host.win-x64",
             "version": "[8.0.11, 8.0.11]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.11, 8.0.11]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
             "version": "[8.0.11, 8.0.11]"
           }
         ],
@@ -5914,40 +5918,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1902",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.IdentityModel.JsonWebTokens' 7.0.3 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
-      "libraryId": "Microsoft.IdentityModel.JsonWebTokens",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1902",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.IdentityModel.Tokens.Jwt' 7.0.3 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
-      "libraryId": "System.IdentityModel.Tokens.Jwt",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1902",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.Security.Cryptography.Xml' 4.5.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-vh55-786g-wjwj",
-      "libraryId": "System.Security.Cryptography.Xml",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  }
 }

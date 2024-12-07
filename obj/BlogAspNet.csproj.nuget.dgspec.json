@@ -1,21 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "/Users/alysonryanullirsch/Documents/ProjetosCsharp/BlogAspNet/BlogAspNet.csproj": {}
+    "D:\\GitHubRepository\\BlogAspNet\\BlogAspNet.csproj": {}
   },
   "projects": {
-    "/Users/alysonryanullirsch/Documents/ProjetosCsharp/BlogAspNet/BlogAspNet.csproj": {
+    "D:\\GitHubRepository\\BlogAspNet\\BlogAspNet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/alysonryanullirsch/Documents/ProjetosCsharp/BlogAspNet/BlogAspNet.csproj",
+        "projectUniqueName": "D:\\GitHubRepository\\BlogAspNet\\BlogAspNet.csproj",
         "projectName": "BlogAspNet",
-        "projectPath": "/Users/alysonryanullirsch/Documents/ProjetosCsharp/BlogAspNet/BlogAspNet.csproj",
-        "packagesPath": "/Users/alysonryanullirsch/.nuget/packages/",
-        "outputPath": "/Users/alysonryanullirsch/Documents/ProjetosCsharp/BlogAspNet/obj/",
+        "projectPath": "D:\\GitHubRepository\\BlogAspNet\\BlogAspNet.csproj",
+        "packagesPath": "C:\\Users\\alyso\\.nuget\\packages\\",
+        "outputPath": "D:\\GitHubRepository\\BlogAspNet\\obj\\",
         "projectStyle": "PackageReference",
         "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
-          "/Users/alysonryanullirsch/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\alyso\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -37,7 +37,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -92,11 +92,15 @@
               "version": "[8.0.11, 8.0.11]"
             },
             {
-              "name": "Microsoft.NETCore.App.Host.osx-arm64",
+              "name": "Microsoft.NETCore.App.Host.win-x64",
               "version": "[8.0.11, 8.0.11]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.11, 8.0.11]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
               "version": "[8.0.11, 8.0.11]"
             }
           ],
@@ -108,7 +112,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
