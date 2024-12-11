@@ -1,31 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHubRepository\\BlogAspNet\\BlogAspNet.csproj": {}
+    "/Users/alysonryanullirsch/Documents/ProjetosCsharp/BlogAspNet/BlogAspNet.csproj": {}
   },
   "projects": {
-    "D:\\GitHubRepository\\BlogAspNet\\BlogAspNet.csproj": {
+    "/Users/alysonryanullirsch/Documents/ProjetosCsharp/BlogAspNet/BlogAspNet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHubRepository\\BlogAspNet\\BlogAspNet.csproj",
+        "projectUniqueName": "/Users/alysonryanullirsch/Documents/ProjetosCsharp/BlogAspNet/BlogAspNet.csproj",
         "projectName": "BlogAspNet",
-        "projectPath": "D:\\GitHubRepository\\BlogAspNet\\BlogAspNet.csproj",
-        "packagesPath": "C:\\Users\\alyso\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHubRepository\\BlogAspNet\\obj\\",
+        "projectPath": "/Users/alysonryanullirsch/Documents/ProjetosCsharp/BlogAspNet/BlogAspNet.csproj",
+        "packagesPath": "/Users/alysonryanullirsch/.nuget/packages/",
+        "outputPath": "/Users/alysonryanullirsch/Documents/ProjetosCsharp/BlogAspNet/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
-          "C:\\Users\\alyso\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/alysonryanullirsch/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -42,9 +37,8 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+          "auditMode": "all"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -98,6 +92,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.11, 8.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-arm64",
+              "version": "[8.0.11, 8.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.11, 8.0.11]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -106,7 +114,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

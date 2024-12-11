@@ -97,5 +97,32 @@ public class AccountController : ControllerBase
         var data = new Regex(@"^data:image\/[a-z]+;base64,").Replace(model.Base64Image, "");
         var bytes = Convert.FromBase64String(data);
 
+        try
+        {
+            await System.IO.File.WriteAllBytesAsync($"wwwroot/images/{filename}", bytes);
+        }
+        catch (Exception e)
+        {
+            return StatusCode(500, new ResultViewModel<string>($"0x005a - Falha interna no servidor"));
+        }
+        
+        var user = await context.Users.FirstOrDefaultAsync(x => x.Email == User.Identity.Name);
+
+        if (user == null)
+            return NotFound(new ResultViewModel<User>("Usuario nao encontrado"));
+
+        user.Image = $"https://localhost:0000/images/{filename}";
+
+        try
+        {
+            context.Users.Update(user);
+            await context.SaveChangesAsync();
+        }
+        catch (Exception e)
+        {
+            return StatusCode(500, new ResultViewModel<string>($"0x230 - Falha interna no servidor"));
+        }
+
+        return Ok(new ResultViewModel<string>("Imagem alterada com sucesso", null));
     }
 }
