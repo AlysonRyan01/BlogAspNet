@@ -1,8 +1,10 @@
+using System.Text.RegularExpressions;
 using BlogAspNet.Data;
 using BlogAspNet.Extensions;
 using BlogAspNet.Models;
 using BlogAspNet.Services;
 using BlogAspNet.ViewModels;
+using BlogAspNet.ViewModels.Accounts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
@@ -83,5 +85,17 @@ public class AccountController : ControllerBase
         {
             return StatusCode(500, new ResultViewModel<User>($"0x230 - Falha interna no servidor"));
         }
+    }
+
+    [Authorize]
+    [HttpPost("v1/acconts/upload-image")]
+    public async Task<IActionResult> UploadImage(
+        [FromBody] UploadImageViewModel model,
+        [FromServices] BlogDataContext context)
+    {
+        var filename = $"{Guid.NewGuid().ToString()}.jpg";
+        var data = new Regex(@"^data:image\/[a-z]+;base64,").Replace(model.Base64Image, "");
+        var bytes = Convert.FromBase64String(data);
+
     }
 }

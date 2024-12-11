@@ -566,3 +566,4 @@ D:\GitHubRepository\BlogAspNet\obj\Debug\net8.0\refint\BlogAspNet.dll
 D:\GitHubRepository\BlogAspNet\obj\Debug\net8.0\BlogAspNet.pdb
 D:\GitHubRepository\BlogAspNet\obj\Debug\net8.0\BlogAspNet.genruntimeconfig.cache
 D:\GitHubRepository\BlogAspNet\obj\Debug\net8.0\ref\BlogAspNet.dll
+D:\GitHubRepository\BlogAspNet\bin\Debug\net8.0\BlogAspNet.staticwebassets.runtime.json

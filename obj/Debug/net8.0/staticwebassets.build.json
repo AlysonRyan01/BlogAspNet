@@ -1,12 +1,20 @@
 {
   "Version": 1,
-  "Hash": "6GvgA1YBGh03sejE5wGbhte7buFp5VID8gaDpNm1SZE=",
+  "Hash": "tjUt3Rc4gYs7ahzy2d6pDacJG+xMWzNiwmHvgQ11NOc=",
   "Source": "BlogAspNet",
   "BasePath": "_content/BlogAspNet",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "BlogAspNet\\wwwroot",
+      "Source": "BlogAspNet",
+      "ContentRoot": "D:\\GitHubRepository\\BlogAspNet\\wwwroot\\",
+      "BasePath": "_content/BlogAspNet",
+      "Pattern": "**"
+    }
+  ],
   "Assets": [],
   "Endpoints": []
 }
