@@ -4,6 +4,8 @@ using BlogAspNet.Data;
 using BlogAspNet.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigureAuthentication(builder);
@@ -51,11 +53,16 @@ void ConfigureAuthentication(WebApplicationBuilder builder)
 
 void ConfigureMvc(WebApplicationBuilder builder)
 {
-    builder.Services
+    builder.Services.AddMemoryCache()
         .AddControllers()
         .ConfigureApiBehaviorOptions(options =>
         {
-            options.SuppressModelStateInvalidFilter = true; // * DESABILITA O RESULTADO DA VALIDACAO PADRAO DO MODELSTATE *
+            options.SuppressModelStateInvalidFilter =
+                true; // * DESABILITA O RESULTADO DA VALIDACAO PADRAO DO MODELSTATE *
+        })
+        .AddJsonOptions(x =>
+        {
+            x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
         });
 }
 
