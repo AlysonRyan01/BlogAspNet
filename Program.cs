@@ -6,11 +6,15 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigureAuthentication(builder);
 ConfigureMvc(builder);
 ConfigureServices(builder);
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 LoadConfiguration(app);
@@ -23,7 +27,8 @@ app.MapControllers();
 
 if (app.Environment.IsDevelopment())
 {
-    Console.WriteLine("Estou no ambiente de desenvolvimento!!");
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 if (app.Environment.IsProduction())
@@ -81,7 +86,11 @@ void ConfigureMvc(WebApplicationBuilder builder)
 
 void ConfigureServices(WebApplicationBuilder builder)
 {
-    builder.Services.AddDbContext<BlogDataContext>();
+    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    builder.Services.AddDbContext<BlogDataContext>(options =>
+    {
+        options.UseSqlServer(connectionString);
+    });
     builder.Services.AddTransient<TokenService>(); //* Sempre criar um novo tokenService
     builder.Services.AddTransient<EmailService>();
 }
