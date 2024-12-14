@@ -15,10 +15,22 @@ ConfigureServices(builder);
 var app = builder.Build();
 LoadConfiguration(app);
 
+app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseStaticFiles();
 app.MapControllers();
+
+if (app.Environment.IsDevelopment())
+{
+    Console.WriteLine("Estou no ambiente de desenvolvimento!!");
+}
+
+if (app.Environment.IsProduction())
+{
+    Console.WriteLine("Estou no ambiente de produção!!");
+}
+
 app.Run();
 
 void LoadConfiguration(WebApplication app)
